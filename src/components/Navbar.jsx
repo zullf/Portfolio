@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
+import cvFile from '../assets/cv-zulfikar.pdf';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,7 +9,7 @@ const Navbar = () => {
     { name: "My Project", href: "#projects" },
     { name: "Certifications", href: "#certifications" },
     { name: "Skills", href: "#skills" },
-    { name: "CV", href: "/cv.pdf", isButton: true }, 
+    { name: "CV", href: cvFile, isButton: true }, 
   ];
 
   return (

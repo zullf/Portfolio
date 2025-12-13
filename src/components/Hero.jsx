@@ -1,19 +1,17 @@
 import React from 'react';
 import { Download } from 'lucide-react';
 import { personalInfo } from '../data';
+import cvFile from '../assets/cv-zulfikar.pdf';
 
 const Hero = () => (
   <section className="pt-20 pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto flex flex-col items-center text-center">
     
-    {/* Label kecil */}
     <div 
       data-aos="fade-up" 
       className="inline-flex items-center px-3 py-1 rounded-full bg-blue-50 text-blue-600 text-sm font-medium mb-6"
     >
       Available for hire
     </div>
-
-    {/* Judul Utama (H1) - Pastikan cuma SATU tag h1 pembungkus */}
     <h1 
       data-aos="fade-up" 
       data-aos-delay="200" 
@@ -24,8 +22,6 @@ const Hero = () => (
         experiences that matter.
       </span>
     </h1>
-
-    {/* Deskripsi (P) - Pastikan cuma SATU tag p pembungkus */}
     <p 
       data-aos="fade-up" 
       data-aos-delay="400" 
@@ -33,16 +29,15 @@ const Hero = () => (
     >
       Hi, I'm {personalInfo.name}. A {personalInfo.title} focused on creating intuitive web applications with clean architecture.
     </p>
-
-    {/* Tombol Action */}
     <div 
       data-aos="fade-up" 
       data-aos-delay="600" 
       className="flex gap-4"
     >
       <a 
-        href="/cv.pdf" 
+        href={cvFile} 
         download="CV_Zulfikar.pdf" 
+        target="_blank"
         className="inline-flex items-center px-8 py-3.5 border border-transparent text-base font-medium rounded-full text-white bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-600/30 transition-all hover:-translate-y-1"
       >
         Download CV <Download size={18} className="ml-2" />
