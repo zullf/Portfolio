@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import AOS from 'aos';                    
-import 'aos/dist/aos.css';      
+import React from 'react';
 
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -11,22 +9,16 @@ import Certifications from './components/Certifications';
 import Footer from './components/Footer';          
 
 export default function Portfolio() {
-  useEffect(() => {
-    AOS.init({
-      once: true,             
-      duration: 1000,         
-      easing: 'ease-out-cubic', 
-    });
-  }, []);
-  
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 selection:bg-blue-100 selection:text-blue-900">
+    <div className="min-h-screen bg-[var(--color-bg-primary)] font-sans text-slate-50 selection:bg-cyan-200 selection:text-slate-950">
       <Navbar />
       <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Certifications />
+      <main className="bg-[var(--color-bg-primary)]">
+        <About />
+        <Skills />
+        <Projects />
+        <Certifications />
+      </main>
       <Footer />
     </div>
   );

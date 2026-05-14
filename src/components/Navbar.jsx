@@ -1,73 +1,82 @@
 import React, { useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
 import cvFile from '../assets/cv-zulfikar.pdf';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "My Project", href: "#projects" },
-    { name: "Certifications", href: "#certifications" },
+    { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
-    { name: "CV", href: cvFile, isButton: true }, 
+    { name: "Projects", href: "#projects" },
+    { name: "Certifications", href: "#certifications" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-gray-200 h-20 flex items-center transition-all duration-300">
-      <div className="w-full px-6 lg:px-16">
+    <nav className="sticky top-0 z-50 flex h-16 items-center border-b border-white/10 bg-slate-950/75 backdrop-blur-xl transition-all duration-300">
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          
-          <div className="flex-shrink-0 flex items-center">
-            <span className="font-extrabold text-2xl text-slate-900 tracking-tight">
+          <a href="#home" className="flex-shrink-0 flex items-center">
+            <span className="font-extrabold text-xl text-white tracking-tight">
               Zulfikar.
             </span>
-          </div>
-          <div className="hidden md:flex items-center space-x-8">
+          </a>
+
+          <div className="hidden md:flex items-center gap-7">
             {navLinks.map((link) => (
-              link.isButton ? (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="px-6 py-3 bg-blue-600 text-white rounded-full text-base font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-600/20 hover:-translate-y-0.5"
-                >
-                  {link.name}
-                </a>
-              ) : (
-                <a 
-                  key={link.name} 
-                  href={link.href} 
-                  className="text-slate-600 hover:text-blue-600 font-semibold transition-colors text-base"
-                >
-                  {link.name}
-                </a>
-              )
+              <a
+                key={link.name}
+                href={link.href}
+                className="text-sm font-semibold text-slate-300 transition-colors hover:text-cyan-300"
+              >
+                {link.name}
+              </a>
             ))}
+            <a
+              href={cvFile}
+              download="CV_Zulfikar.pdf"
+              className="inline-flex items-center gap-2 rounded-full bg-cyan-200 px-4 py-2 text-sm font-bold text-slate-950 shadow-lg shadow-cyan-500/10 transition-all hover:-translate-y-0.5 hover:bg-cyan-100"
+            >
+              <Download size={16} />
+              CV
+            </a>
           </div>
+
           <div className="md:hidden flex items-center">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-slate-600 hover:text-slate-900 focus:outline-none p-2">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="rounded-full border border-white/10 p-2 text-slate-200 transition-colors hover:border-cyan-300 hover:text-cyan-200"
+              aria-label="Toggle navigation"
+            >
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
           </div>
         </div>
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-100 absolute top-20 left-0 w-full shadow-xl">
-          <div className="px-6 py-6 space-y-4">
+        <div className="absolute left-0 top-16 w-full border-b border-white/10 bg-slate-950/95 shadow-2xl backdrop-blur-xl md:hidden">
+          <div className="space-y-2 px-4 py-5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className={`block px-4 py-3 rounded-lg text-lg font-medium transition-colors ${
-                  link.isButton 
-                    ? "bg-blue-600 text-white text-center hover:bg-blue-700" 
-                    : "text-slate-600 hover:bg-slate-50 hover:text-blue-600"
-                }`}
+                className="block rounded-xl px-4 py-3 text-base font-semibold text-slate-200 transition-colors hover:bg-white/10 hover:text-cyan-200"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
               </a>
             ))}
+            <a
+              href={cvFile}
+              download="CV_Zulfikar.pdf"
+              className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-cyan-200 px-4 py-3 text-base font-bold text-slate-950 transition-colors hover:bg-cyan-100"
+              onClick={() => setIsOpen(false)}
+            >
+              <Download size={18} />
+              Download CV
+            </a>
           </div>
         </div>
       )}

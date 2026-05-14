@@ -1,3 +1,136 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg-primary: #020617;
+    --color-bg-secondary: #07111f;
+    --color-bg-tertiary: #0b1424;
+    --color-card: rgba(15, 23, 42, 0.68);
+    --color-card-strong: rgba(15, 23, 42, 0.86);
+    --color-border: rgba(148, 163, 184, 0.16);
+    --color-border-strong: rgba(103, 232, 249, 0.28);
+    --color-accent: #67e8f9;
+    --color-accent-strong: #22d3ee;
+    --color-text: #f8fafc;
+    --color-text-muted: #94a3b8;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--color-bg-primary);
+    color: var(--color-text);
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply relative isolate overflow-hidden py-20 sm:py-24;
+    background:
+      linear-gradient(180deg, rgba(2, 6, 23, 0.98) 0%, rgba(7, 17, 31, 0.98) 48%, rgba(2, 6, 23, 0.98) 100%);
+  }
+
+  .section-shell-alt {
+    @apply relative isolate overflow-hidden py-20 sm:py-24;
+    background:
+      linear-gradient(180deg, rgba(3, 10, 24, 0.99) 0%, rgba(10, 22, 39, 0.96) 50%, rgba(3, 10, 24, 0.99) 100%);
+  }
+
+  .section-shell::before,
+  .section-shell-alt::before {
+    content: "";
+    @apply pointer-events-none absolute inset-0 -z-10;
+    background-image:
+      linear-gradient(to right, rgba(148, 163, 184, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, transparent, black 18%, black 82%, transparent);
+  }
+
+  .section-shell::after,
+  .section-shell-alt::after {
+    content: "";
+    @apply pointer-events-none absolute inset-x-0 top-0 -z-10 h-40;
+    background: linear-gradient(180deg, rgba(103, 232, 249, 0.075), transparent);
+  }
+
+  .section-inner {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-kicker {
+    @apply text-sm font-bold uppercase text-cyan-200;
+    letter-spacing: 0.24em;
+  }
+
+  .section-title {
+    @apply mt-3 text-3xl font-black tracking-tight text-slate-50 sm:text-4xl;
+  }
+
+  .section-copy {
+    @apply mt-4 text-base leading-7 text-slate-300;
+  }
+
+  .surface-card {
+    @apply rounded-2xl border p-6 backdrop-blur-xl transition-all duration-300;
+    background: var(--color-card);
+    border-color: var(--color-border);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, 0.18);
+  }
+
+  .surface-card:hover {
+    border-color: var(--color-border-strong);
+    box-shadow: 0 22px 60px rgba(8, 145, 178, 0.14);
+  }
+
+  .glass-panel {
+    @apply rounded-[2rem] border backdrop-blur-xl;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(8, 20, 37, 0.72));
+    border-color: var(--color-border);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.28), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+
+  .icon-tile {
+    @apply flex h-11 w-11 items-center justify-center rounded-xl text-cyan-200;
+    background: rgba(103, 232, 249, 0.1);
+    border: 1px solid rgba(103, 232, 249, 0.18);
+  }
+
+  .tech-badge {
+    @apply rounded-full border px-3 py-1.5 text-xs font-bold text-slate-200 transition-colors;
+    background: rgba(15, 23, 42, 0.74);
+    border-color: var(--color-border);
+  }
+
+  .tech-badge:hover {
+    background: rgba(8, 145, 178, 0.16);
+    border-color: var(--color-border-strong);
+    color: var(--color-text);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3.5 text-sm font-black text-slate-950 transition-all hover:-translate-y-1;
+    background: linear-gradient(135deg, #a5f3fc, var(--color-accent-strong));
+    box-shadow: 0 18px 42px rgba(34, 211, 238, 0.18);
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 22px 54px rgba(34, 211, 238, 0.24);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3.5 text-sm font-bold text-slate-100 backdrop-blur transition-all hover:-translate-y-1;
+    background: rgba(15, 23, 42, 0.58);
+    border-color: var(--color-border);
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--color-border-strong);
+    background: rgba(8, 145, 178, 0.16);
+    color: white;
+  }
+}
