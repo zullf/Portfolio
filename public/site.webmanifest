@@ -1,0 +1,19 @@
+{
+  "name": "Zulfikar Hasan Portfolio",
+  "short_name": "Zulfikar",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#061722",
+  "background_color": "#061722",
+  "display": "standalone"
+}
