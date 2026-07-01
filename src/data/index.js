@@ -24,6 +24,7 @@ export const projects = [
     tags: ["React.js", "Tailwind CSS", "Responsive UI"],
     image: biteyoImg,
     repoLink: "https://github.com/ltnzz/biteyo-fe",
+    demoLink: "https://biteyo.my.id/",
     featured: true,
     category: "Web App"
   },
