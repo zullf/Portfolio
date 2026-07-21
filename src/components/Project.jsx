@@ -29,7 +29,7 @@ const Projects = () => (
       >
         <p className="section-kicker">Projects</p>
         <h2 className="section-title">
-          Selected work for Front-End Developer internship roles.
+          Selected work for Web Developer internship roles.
         </h2>
         <p className="section-copy">
           A focused mix of React web apps, React Native mobile apps, and Android work that highlights UI implementation, API integration, state handling, and responsive product thinking.

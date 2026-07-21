@@ -39,7 +39,7 @@ const Skills = () => (
           Practical stack for web and mobile interfaces.
         </h2>
         <p className="section-copy">
-          Grouped around the skills recruiters usually look for in a Front-End Developer intern: UI implementation, responsive layout, API work, and collaboration tools.
+          Grouped around the skills recruiters usually look for in Web Developer intern: UI implementation, responsive layout, API work, and collaboration tools.
         </p>
       </motion.div>
 

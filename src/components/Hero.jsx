@@ -28,7 +28,7 @@ const Hero = () => (
           className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-slate-900/60 px-4 py-2 text-sm font-semibold text-cyan-100 shadow-sm backdrop-blur"
         >
           <span className="h-2 w-2 rounded-full bg-emerald-400" />
-          Open for Front-End Internship
+          Open for Web Developer Internship
         </motion.div>
 
         <motion.p variants={fadeUp} className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-cyan-200">

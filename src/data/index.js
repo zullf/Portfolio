@@ -7,7 +7,7 @@ import premovieImg from '../assets/premovie.jpeg';
 
 export const personalInfo = {
   name: "Zulfikar Hasan",
-  title: "Front-End Developer Intern Candidate",
+  title: "Web Developer Intern Candidate",
   bio: "I am an Information Systems student focused on React.js, Tailwind CSS, React Native, UI development, API integration, and building responsive user experiences. I enjoy turning product ideas into clean interfaces that feel fast, usable, and easy to maintain.",
   email: "zulfikarhasan118@gmail.com",
   socials: {
