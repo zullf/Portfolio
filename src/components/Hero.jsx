@@ -89,7 +89,7 @@ const Hero = () => (
           </div>
           <div className="space-y-4 font-mono text-sm text-slate-300">
             <p><span className="text-cyan-300">const</span> candidate = &#123;</p>
-            <p className="pl-5">role: <span className="text-emerald-300">'Front-End Intern'</span>,</p>
+            <p className="pl-5">role: <span className="text-emerald-300">'Web Developer Intern'</span>,</p>
             <p className="pl-5">stack: <span className="text-emerald-300">['React', 'Tailwind', 'React Native']</span>,</p>
             <p className="pl-5">focus: <span className="text-emerald-300">'usable interfaces + API integration'</span></p>
             <p>&#125;</p>
